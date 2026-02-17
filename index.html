@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-top: 20px;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        video {
+            margin-top: 30px;
+            max-width: 90%;
+            display: none; /* hidden until play button clicked */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dashboard</h1>
+    <button id="playBtn">Play It</button>
+
+    <video id="videoPlayer" controls>
+        <source src="vid/jumpscare.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        const playBtn = document.getElementById('playBtn');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        playBtn.addEventListener('click', () => {
+            videoPlayer.style.display = 'block'; // show video
+            videoPlayer.play(); // play video automatically
+            playBtn.style.display = 'none'; // hide button after click
+        });
+    </script>
+</body>
+</html>
